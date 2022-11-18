@@ -188,7 +188,7 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="rounded-circle header-profile-user" src="/assets/images/users/avatar-1.jpg"
                                     alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{auth()->user()->name}}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
@@ -209,103 +209,7 @@
             </header>
 
             <!-- ========== Left Sidebar Start ========== -->
-            <div class="vertical-menu">
-
-                <div data-simplebar class="h-100">
-
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" key="t-menu">Menu</li>
-
-                            <li class="mm-active">
-                                <a href="pages-starter.html" class="waves-effect active">
-                                    <i class="bx bx-home-circle"></i>
-                                    <span key="t-starter-page">Starter Page</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-layout"></i>
-                                    <span key="t-layouts">Layouts</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Vertical</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Light Sidebar</a></li>
-                                            <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                            <li><a href="layouts-icon-sidebar.html" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                            <li><a href="layouts-boxed.html" key="t-boxed-width">Boxed Width</a></li>
-                                            <li><a href="layouts-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-colored-sidebar.html" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                            <li><a href="layouts-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-horizontal">Horizontal</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-horizontal.html" key="t-horizontal">Horizontal</a></li>
-                                            <li><a href="layouts-hori-topbar-light.html" key="t-topbar-light">Topbar light</a></li>
-                                            <li><a href="layouts-hori-boxed-width.html" key="t-boxed-width">Boxed width</a></li>
-                                            <li><a href="layouts-hori-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-hori-colored-header.html" key="t-colored-topbar">Colored Header</a></li>
-                                            <li><a href="layouts-hori-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="menu-title" key="t-pages">Pages</li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-user-circle"></i>
-                                    <span key="t-authentication">Authentication</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="auth-login.html" key="t-login">Login</a></li>
-                                    <li><a href="auth-login-2.html" key="t-login-2">Login 2</a></li>
-                                    <li><a href="auth-register.html" key="t-register">Register</a></li>
-                                    <li><a href="auth-register-2.html" key="t-register-2">Register 2</a></li>
-                                    <li><a href="auth-recoverpw.html" key="t-recover-password">Recover Password</a></li>
-                                    <li><a href="auth-recoverpw-2.html" key="t-recover-password-2">Recover Password 2</a></li>
-                                    <li><a href="auth-lock-screen.html" key="t-lock-screen">Lock Screen</a></li>
-                                    <li><a href="auth-lock-screen-2.html" key="t-lock-screen-2">Lock Screen 2</a></li>
-                                    <li><a href="auth-confirm-mail.html" key="t-confirm-mail">Confirm Email</a></li>
-                                    <li><a href="auth-confirm-mail-2.html" key="t-confirm-mail-2">Confirm Email 2</a></li>
-                                    <li><a href="auth-email-verification.html" key="t-email-verification">Email verification</a></li>
-                                    <li><a href="auth-email-verification-2.html" key="t-email-verification-2">Email Verification 2</a></li>
-                                    <li><a href="auth-two-step-verification.html" key="t-two-step-verification">Two Step Verification</a></li>
-                                    <li><a href="auth-two-step-verification-2.html" key="t-two-step-verification-2">Two Step Verification 2</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-share-alt"></i>
-                                    <span key="t-multi-level">Multi Level</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li><a href="javascript: void(0);" key="t-level-1-1">Level 1.1</a></li>
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Level 1.2</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="javascript: void(0);" key="t-level-2-1">Level 2.1</a></li>
-                                            <li><a href="javascript: void(0);" key="t-level-2-2">Level 2.2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!-- Sidebar -->
-                </div>
-            </div>
+            @include('admin.partials.nav')
             <!-- Left Sidebar End -->
 
             
@@ -320,64 +224,10 @@
         <!-- END layout-wrapper -->
 
         <!-- Right Sidebar -->
-        <div class="right-bar">
-            <div data-simplebar class="h-100">
-                <div class="rightbar-title d-flex align-items-center px-3 py-4">
-            
-                    <h5 class="m-0 me-2">Settings</h5>
-
-                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                        <i class="mdi mdi-close noti-icon"></i>
-                    </a>
-                </div>
-
-                <!-- Settings -->
-                <hr class="mt-0" />
-                <h6 class="text-center mb-0">Choose Layouts</h6>
-
-                <div class="p-4">
-                    <div class="mb-2">
-                        <img src="/assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
-                    </div>
-
-                    <div class="form-check form-switch mb-3">
-                        <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
-                        <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-                    </div>
-    
-                    <div class="mb-2">
-                        <img src="/assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
-                    </div>
-                    <div class="form-check form-switch mb-3">
-                        <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
-                        <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-                    </div>
-    
-                    <div class="mb-2">
-                        <img src="/assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
-                    </div>
-                    <div class="form-check form-switch mb-3">
-                        <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
-                        <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
-                    </div>
-
-                    <div class="mb-2">
-                        <img src="/assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
-                    </div>
-                    <div class="form-check form-switch mb-5">
-                        <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
-                        <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
-                    </div>
-
-            
-                </div>
-
-            </div> <!-- end slimscroll-menu-->
-        </div>
+       
         <!-- /Right-bar -->
 
         <!-- Right bar overlay-->
-        <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
         <script src="/assets/libs/jquery/jquery.min.js"></script>
