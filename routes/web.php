@@ -25,17 +25,15 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 Route::get('/', 'PagesController@home');
 
-Route::get('posts',function(){
-
-    return App\Models\Post::all();
-});
 
 
-Route::get('/home','HomeController@index');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=> 'auth'],function()
 {
-    Route::get('/post','PostController@index');
+    Route::get('/','AdminController@index')->name('admin');
 
+    //POST
+    Route::get('/posts','PostController@index')->name('admin.posts.index');
+    Route::get('/posts/create','PostController@store')->name('admin.posts.store');
 });
 
