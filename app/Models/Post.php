@@ -9,7 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $dates = ['published_at'];
+    protected $dates    = ['published_at'];
+    protected $guarded  = [];
 
 
     public function category()

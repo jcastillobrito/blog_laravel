@@ -26,7 +26,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.posts.index') }}" key="t-login">Ver todos los Posts</a></li>
-                        <li><a href="{{ route('admin.posts.store') }}" key="t-two-step-verification-2">Crear Post</a></li>
+                        <li><a href="{{ route('admin.posts.create') }}" key="t-two-step-verification-2">Crear Post</a></li>
                     </ul>
                 </li>
 
